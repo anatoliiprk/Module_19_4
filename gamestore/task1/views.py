@@ -35,22 +35,6 @@ def index3(request):
     }
     return render(request, 'basket.html', context)
 
-def data_processing(username, password, repeat_password, age):
-    users = ['Ivan', 'Olga', 'Vladimir', 'Anna']
-    info = {}
-
-    if password == repeat_password and int(age) >= 18 and username not in users:
-        text = f'Приветствуем, {username}!'
-        info = {'error': text}
-    else:
-        if password != repeat_password:
-            info['error'] = 'Пароли не совпадают'
-        elif int(age) < 18:
-            info['error'] = 'Вы должны быть старше 18'
-        elif username in users:
-            info['error'] = 'Пользователь уже существует'
-    return info
-
 
 def sign_up_by_django(request):
     if request.method == 'POST':
