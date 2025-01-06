@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+        <h1>{{ text }}</h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+        <a href="http://127.0.0.1:8000"><h4>Главная</h4></a>
+        <a href="http://127.0.0.1:8000/games"><h4>Магазин</h4></a>
+        <a href="http://127.0.0.1:8000/basket"><h4>Корзина</h4></a>
+        <a href="http://127.0.0.1:8000/sign_up"><h4>Регистрация</h4></a>
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

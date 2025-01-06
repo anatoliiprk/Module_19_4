@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Регистрация пользователя</h1>
+    <a href="http://127.0.0.1:8000"><h4>Главная</h4></a>
+    <a href="http://127.0.0.1:8000/games"><h4>Магазин</h4></a>
+    <a href="http://127.0.0.1:8000/basket"><h4>Корзина</h4></a>
+    <a href="http://127.0.0.1:8000/sign_up"><h4>Регистрация</h4></a>
+    <h2>{{ text }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Введите логин:</label>
+        <input type="text" id="username" name="username" maxlength="30" required>
+
+        <label for="password">Введите пароль:</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+
+        <label for="repeat_password">Повторите пароль:</label>
+        <input type="password" id="repeat_password" name="repeat_password" minlength="8" required>
+
+        <label for="age">Введите свой возраст:</label>
+        <input type="text" id="age" name="age" maxlength="3" required>
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</body>
+</html>
